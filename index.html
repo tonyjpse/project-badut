@@ -7,62 +7,61 @@
     <style>
         :root {
             --primary-yellow: #ffcc00;
-            --dark-bg: #1a1a1a;
-            --bubble-bg: rgba(255, 255, 255, 0.9);
+            --soft-gold: #ffd633;
+            --dark-accent: #4d3300;
+            --bubble-bg: rgba(255, 255, 255, 0.95);
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ffcc00 0%, #332200 100%);
+            /* Warna dibuat lebih cerah ceria, tidak angker */
+            background: linear-gradient(135deg, #ffdb4d 0%, #ffcc00 50%, #e6b800 100%);
             background-attachment: fixed;
             color: #333;
             min-height: 100vh;
         }
 
-        /* Navigasi */
         nav {
             display: flex;
             justify-content: flex-end;
-            padding: 20px 5%;
-            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 5%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
         }
 
         nav a {
-            color: white;
+            color: var(--dark-accent);
             text-decoration: none;
             margin-left: 20px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: 0.3s;
         }
 
-        nav a:hover { color: var(--primary-yellow); }
+        nav a:hover { color: #fff; }
 
-        /* Container Utama */
         .main-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 50px 5%;
+            padding: 40px 5%;
             flex-wrap: wrap;
         }
 
-        /* Bagian Kiri: Badut */
         .clown-section {
             flex: 1;
-            min-width: 300px;
+            min-width: 280px;
             text-align: center;
             animation: float 3s ease-in-out infinite;
         }
 
         .clown-section img {
-            max-width: 80%;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+            max-width: 70%;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
         }
 
-        /* Bagian Rerinci: Balon Teks */
         .content-section {
             flex: 1;
             min-width: 300px;
@@ -70,87 +69,111 @@
 
         .speech-bubble {
             background: var(--bubble-bg);
-            padding: 30px;
+            padding: 25px;
             border-radius: 20px;
             position: relative;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-            border-left: 8px solid #333;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-left: 6px solid var(--dark-accent);
         }
 
         .speech-bubble::after {
             content: '';
             position: absolute;
-            left: -20px;
-            top: 50px;
-            border-width: 10px 20px 10px 0;
+            left: -15px;
+            top: 40px;
+            border-width: 8px 15px 8px 0;
             border-style: solid;
             border-color: transparent var(--bubble-bg) transparent transparent;
         }
 
-        h1 { color: #000; margin-top: 0; }
-        p { line-height: 1.6; font-size: 1.1rem; }
+        h1 { color: var(--dark-accent); margin-top: 0; font-size: 1.8rem; }
+        p { line-height: 1.5; font-size: 1rem; color: #444; }
 
         .cta-button {
             display: inline-block;
-            background: #000;
+            background: var(--dark-accent);
             color: #fff;
-            padding: 12px 25px;
+            padding: 10px 22px;
             text-decoration: none;
             border-radius: 50px;
-            margin-top: 20px;
+            margin-top: 15px;
             font-weight: bold;
+            font-size: 0.9rem;
             transition: 0.3s;
         }
 
-        .cta-button:hover { background: #444; transform: scale(1.05); }
+        /* SLIDER AREA - Panjang & Responsif */
+        .slider-container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 4px solid #fff;
+        }
 
-        /* KOTAK BESAR DI BAWAH */
+        .slider-wrapper {
+            display: flex;
+            width: 300%; /* Sesuai jumlah gambar */
+            animation: slide 12s infinite ease-in-out;
+        }
+
+        .slider-wrapper img {
+            width: 100%;
+            height: 250px; /* Dibuat ramping/panjang */
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            30% { transform: translateX(0); }
+            33% { transform: translateX(-33.33%); }
+            63% { transform: translateX(-33.33%); }
+            66% { transform: translateX(-66.66%); }
+            96% { transform: translateX(-66.66%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* KOTAK PENJELASAN */
         .extra-content-box {
             width: 90%;
             max-width: 1000px;
-            margin: 0 auto 50px auto;
-            background: rgba(0, 0, 0, 0.4);
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 40px;
-            color: white;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.5);
         }
 
         .meaning-section {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
-        .meaning-col {
-            flex: 1;
-            min-width: 280px;
+        .meaning-col { flex: 1; min-width: 250px; }
+        h2.gold-title { color: var(--dark-accent); border-bottom: 2px solid var(--dark-accent); display: inline-block; padding-bottom: 5px; font-size: 1.2rem; }
+
+        /* FOOTER SIMPEL */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--dark-accent);
+            font-size: 0.8rem;
+            font-weight: bold;
         }
 
-        h2.gold-title {
-            color: var(--primary-yellow);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 0;
-            border-bottom: 2px solid var(--primary-yellow);
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-bottom: 25px;
-        }
-
-        /* Animasi */
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
 
         @media (max-width: 768px) {
             .main-container { flex-direction: column; text-align: center; }
             .speech-bubble::after { display: none; }
-            .clown-section { margin-bottom: 30px; }
-            .extra-content-box { width: 85%; padding: 25px; }
+            .slider-wrapper img { height: 180px; }
         }
     </style>
 </head>
@@ -165,7 +188,7 @@
 
     <div class="main-container">
         <div class="clown-section">
-            <img src="https://via.placeholder.com/400x500/ffcc00/000000?text=MASKOT+BADUT" alt="Maskot Badut">
+            <img src="https://via.placeholder.com/400x500/ffcc00/4d3300?text=BADUT+CERIA" alt="Maskot Badut">
         </div>
 
         <div class="content-section">
@@ -176,35 +199,36 @@
                     Tenang, di sini kami punya <strong>AKAL</strong> buat bikin liburan kamu jadi 
                     seru kayak di taman hiburan tanpa bikin kantong bolong.
                 </p>
-                <p>
-                    Dari sewa unit Elf sampai motor buat keliling Labuan Bajo, 
-                    si Maskot kami siap kawal perjalanan kamu dengan jujur dan teliti. 
-                    Gak pake ribet, gak pake basa-basi!
-                </p>
                 <a href="#" class="cta-button">Cek Harga Sekarang!</a>
             </div>
         </div>
     </div>
 
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <img src="https://via.placeholder.com/1000x250/ffdb4d/4d3300?text=TAMAN+HIBURAN+KOTA+A" alt="City A">
+            <img src="https://via.placeholder.com/1000x250/ffcc00/4d3300?text=TAMAN+HIBURAN+KOTA+B" alt="City B">
+            <img src="https://via.placeholder.com/1000x250/e6b800/4d3300?text=TAMAN+HIBURAN+KOTA+C" alt="City C">
+        </div>
+    </div>
+
     <div class="extra-content-box">
-        <h2 class="gold-title">Was bedeutet das? (Apa Artinya?)</h2>
+        <h2 class="gold-title">Was bedeutet das?</h2>
         <div class="meaning-section">
             <div class="meaning-col">
-                <p><strong style="color: var(--primary-yellow);">Bahasa Jerman:</strong></p>
-                <p>
-                    Willkommen bei Fun Travel! Wir bieten die besten Mietwagen und Motorräder für Ihr Abenteuer. 
-                    Keine versteckten Kosten, nur ehrlicher Service wie ein alter Freund. Wir sind hier, um Ihre Reise unvergesslich zu machen.
-                </p>
+                <p><strong>Bahasa Jerman:</strong></p>
+                <p>Willkommen bei Fun Travel! Wir bieten die besten Mietwagen und Motorräder für Ihr Abenteuer. Keine versteckten Kosten, ehrlicher Service.</p>
             </div>
             <div class="meaning-col">
-                <p><strong style="color: var(--primary-yellow);">Artinya:</strong></p>
-                <p>
-                    Selamat datang di Fun Travel! Kami menyediakan sewa mobil dan motor terbaik untuk petualangan Anda. 
-                    Tanpa biaya tersembunyi, hanya layanan jujur seperti teman lama. Kami di sini untuk membuat perjalanan Anda tak terlupakan.
-                </p>
+                <p><strong>Artinya:</strong></p>
+                <p>Selamat datang di Fun Travel! Kami menyediakan sewa mobil dan motor terbaik untuk petualangan Anda tanpa biaya tersembunyi.</p>
             </div>
         </div>
     </div>
+
+    <footer>
+        &copy; 2026 Fun Travel - Pages.dev - Single Fighter Project 🐢
+    </footer>
 
 </body>
 </html>

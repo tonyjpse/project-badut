@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-
-    <head>
+<html lang="de">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Günstige Mietwagen und Motorräder für Ihr Abenteuer in Indonesien. Ehrlicher Service, keine versteckten Kosten. Jetzt bei Fun Travel buchen!">
+    <title>Compensair & Mietwagen Indonesien | Fun Travel 🤡</title>
+    <meta name="description" content="Flugverspätung? Nutzen Sie Compensair für Ihre Entschädigung! Plus: Günstige Mietwagen und Motorräder in Indonesien ohne versteckte Kosten.">
+    <meta name="keywords" content="Compensair, Flugverspätung Entschädigung, Mietwagen Indonesien, Motorrad mieten, Fun Travel, Fluggastrechte">
     <meta http-equiv="content-language" content="de">
-    <title>Fun Travel - Mietwagen & Motorräder mit Herz</title>
-    ```
+
     <style>
         :root {
             --primary-yellow: #ffcc00;
@@ -17,10 +17,8 @@
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Warna dibuat lebih cerah ceria, tidak angker */
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #ffdb4d 0%, #ffcc00 50%, #e6b800 100%);
             background-attachment: fixed;
             color: #333;
@@ -28,8 +26,7 @@
         }
 
         nav {
-            display: flex;
-            justify-content: flex-end;
+            display: flex; justify-content: flex-end;
             padding: 15px 5%;
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(5px);
@@ -41,143 +38,79 @@
             margin-left: 20px;
             font-weight: bold;
             font-size: 0.85rem;
-            transition: 0.3s;
         }
 
-        nav a:hover { color: #fff; }
-
+        /* Container Utama */
         .main-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 5%;
-            flex-wrap: wrap;
+            display: flex; align-items: center; justify-content: center;
+            padding: 40px 5%; flex-wrap: wrap;
         }
 
-        .clown-section {
-            flex: 1;
-            min-width: 280px;
-            text-align: center;
-            animation: float 3s ease-in-out infinite;
-        }
+        .clown-section { flex: 1; min-width: 280px; text-align: center; animation: float 3s infinite ease-in-out; }
+        .clown-section img { max-width: 70%; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2)); }
 
-        .clown-section img {
-            max-width: 70%;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
-        }
-
-        .content-section {
-            flex: 1;
-            min-width: 300px;
-        }
-
+        /* Balon Teks */
+        .content-section { flex: 1; min-width: 300px; }
         .speech-bubble {
-            background: var(--bubble-bg);
-            padding: 25px;
-            border-radius: 20px;
-            position: relative;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-left: 6px solid var(--dark-accent);
+            background: var(--bubble-bg); padding: 25px; border-radius: 20px;
+            position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-left: 8px solid var(--dark-accent);
         }
-
         .speech-bubble::after {
-            content: '';
-            position: absolute;
-            left: -15px;
-            top: 40px;
-            border-width: 8px 15px 8px 0;
-            border-style: solid;
+            content: ''; position: absolute; left: -15px; top: 40px;
+            border-width: 8px 15px 8px 0; border-style: solid;
             border-color: transparent var(--bubble-bg) transparent transparent;
         }
 
-        h1 { color: var(--dark-accent); margin-top: 0; font-size: 1.8rem; }
-        p { line-height: 1.5; font-size: 1rem; color: #444; }
+        h1 { color: var(--dark-accent); font-size: 1.8rem; margin-bottom: 10px; }
+        h2 { color: #b32d00; font-size: 1.5rem; margin-top: 0; } /* Warna merah dikit biar 'warning' */
 
-        .cta-button {
-            display: inline-block;
-            background: var(--dark-accent);
-            color: #fff;
-            padding: 10px 22px;
-            text-decoration: none;
-            border-radius: 50px;
-            margin-top: 15px;
-            font-weight: bold;
-            font-size: 0.9rem;
+        /* Kotak Compensair - Si Mak Jleb */
+        .compensair-box {
+            width: 90%; max-width: 1000px; margin: 20px auto;
+            background: #fff; border: 3px dashed #ff4444;
+            border-radius: 15px; padding: 30px; text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .compensair-box h3 { color: #ff4444; text-transform: uppercase; margin-top: 0; }
+        .btn-claim {
+            display: inline-block; background: #ff4444; color: white;
+            padding: 15px 30px; text-decoration: none; border-radius: 5px;
+            font-weight: bold; font-size: 1.2rem; margin-top: 15px;
             transition: 0.3s;
         }
+        .btn-claim:hover { background: #cc0000; transform: scale(1.05); }
 
-        /* SLIDER AREA - Panjang & Responsif */
+        /* Slider */
         .slider-container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 20px auto;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border: 4px solid #fff;
+            width: 90%; max-width: 1000px; margin: 20px auto;
+            overflow: hidden; border-radius: 15px; border: 4px solid #fff;
         }
+        .slider-wrapper { display: flex; width: 300%; animation: slide 12s infinite ease-in-out; }
+        .slider-wrapper img { width: 100%; height: 250px; object-fit: cover; }
 
-        .slider-wrapper {
-            display: flex;
-            width: 300%; /* Sesuai jumlah gambar */
-            animation: slide 12s infinite ease-in-out;
+        /* Kotak Penjelasan */
+        .extra-content-box {
+            width: 90%; max-width: 1000px; margin: 30px auto;
+            background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px);
+            border-radius: 20px; padding: 30px; border: 1px solid rgba(255,255,255,0.5);
         }
+        .meaning-section { display: flex; gap: 20px; flex-wrap: wrap; }
+        .meaning-col { flex: 1; min-width: 250px; }
 
-        .slider-wrapper img {
-            width: 100%;
-            height: 250px; /* Dibuat ramping/panjang */
-            object-fit: cover;
-        }
+        footer { text-align: center; padding: 30px; color: var(--dark-accent); font-size: 0.8rem; }
 
         @keyframes slide {
-            0% { transform: translateX(0); }
-            30% { transform: translateX(0); }
-            33% { transform: translateX(-33.33%); }
-            63% { transform: translateX(-33.33%); }
-            66% { transform: translateX(-66.66%); }
-            96% { transform: translateX(-66.66%); }
+            0%, 30% { transform: translateX(0); }
+            33%, 63% { transform: translateX(-33.33%); }
+            66%, 96% { transform: translateX(-66.66%); }
             100% { transform: translateX(0); }
         }
-
-        /* KOTAK PENJELASAN */
-        .extra-content-box {
-            width: 90%;
-            max-width: 1000px;
-            margin: 30px auto;
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(255,255,255,0.5);
-        }
-
-        .meaning-section {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .meaning-col { flex: 1; min-width: 250px; }
-        h2.gold-title { color: var(--dark-accent); border-bottom: 2px solid var(--dark-accent); display: inline-block; padding-bottom: 5px; font-size: 1.2rem; }
-
-        /* FOOTER SIMPEL */
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: var(--dark-accent);
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 
         @media (max-width: 768px) {
             .main-container { flex-direction: column; text-align: center; }
             .speech-bubble::after { display: none; }
-            .slider-wrapper img { height: 180px; }
         }
     </style>
 </head>
@@ -185,53 +118,65 @@
 
     <nav>
         <a href="#">HOME</a>
-        <a href="#">BIKE RENT</a>
-        <a href="#">CAR RENTAL</a>
-        <a href="#">FLIGHT CLAIM</a>
+        <a href="#">COMPENSAIR</a>
+        <a href="#">MIETWAGEN</a>
+        <a href="#">KONTAKT</a>
     </nav>
 
     <div class="main-container">
         <div class="clown-section">
-            <img src="https://via.placeholder.com/400x500/ffcc00/4d3300?text=BADUT+CERIA" alt="Maskot Badut">
+            <img src="https://via.placeholder.com/400x500/ffcc00/4d3300?text=FUN+CLOWN" alt="Fun Travel Clown">
         </div>
 
         <div class="content-section">
             <div class="speech-bubble">
-                <h1>Halo, Traveler! 🤡</h1>
+                <h1>Hallo, liebe Reisende! 🤡</h1>
                 <p>
-                    Lagi nyari sewa mobil atau motor tapi takut kena harga "Badut"? 
-                    Tenang, di sini kami punya <strong>AKAL</strong> buat bikin liburan kamu jadi 
-                    seru kayak di taman hiburan tanpa bikin kantong bolong.
+                    Suchen Sie einen Mietwagen oder ein Motorrad, ohne dabei wie ein ‚Clown‘ zu viel zu bezahlen? 
+                    Keine Sorge! Bei uns finden Sie die perfekte Lösung, um Ihren Urlaub so aufregend wie einen Freizeitpark zu gestalten – und das ganz ohne versteckte Kosten.
                 </p>
-                <a href="#" class="cta-button">Cek Harga Sekarang!</a>
+                <p>
+                    Unser Maskottchen begleitet Sie mit ehrlichem und zuverlässigem Service. Unkompliziert, transparent und direkt!
+                </p>
             </div>
         </div>
+    </div>
+
+    <div class="compensair-box">
+        <h3>🚨 Flugverspätung? Geld zurück mit Compensair!</h3>
+        <p>
+            Hat Ihr Flug nach Indonesien mehr als 3 Stunden Verspätung? <strong>Lassen Sie sich nicht verarschen!</strong> 
+            Nach EU-Recht stehen Ihnen bis zu <strong>600 € Entschädigung</strong> zu. 
+        </p>
+        <p>Mit <strong>Compensair</strong> holen Sie sich Ihr Geld ohne Risiko zurück. Kein Erfolg, keine Gebühr!</p>
+        <a href="LINK-AFILIASI-COMPENSAIR-KAMU" class="btn-claim">JETZT ENTSCHÄDIGUNG PRÜFEN!</a>
+        <h4>Warum Compensair? Weil Ihr Geld Ihnen gehört!</h4>
     </div>
 
     <div class="slider-container">
         <div class="slider-wrapper">
-            <img src="https://via.placeholder.com/1000x250/ffdb4d/4d3300?text=TAMAN+HIBURAN+KOTA+A" alt="City A">
-            <img src="https://via.placeholder.com/1000x250/ffcc00/4d3300?text=TAMAN+HIBURAN+KOTA+B" alt="City B">
-            <img src="https://via.placeholder.com/1000x250/e6b800/4d3300?text=TAMAN+HIBURAN+KOTA+C" alt="City C">
+            <img src="https://via.placeholder.com/1000x250/ffdb4d/4d3300?text=FREIZEITPARK+A" alt="Freizeitpark">
+            <img src="https://via.placeholder.com/1000x250/ffcc00/4d3300?text=FREIZEITPARK+B" alt="Amusement Park">
+            <img src="https://via.placeholder.com/1000x250/e6b800/4d3300?text=FREIZEITPARK+C" alt="Indonesia Travel">
         </div>
     </div>
 
     <div class="extra-content-box">
-        <h2 class="gold-title">Was bedeutet das?</h2>
+        <h2 style="color: var(--dark-accent);">Was bedeutet das?</h2>
         <div class="meaning-section">
             <div class="meaning-col">
-                <p><strong>Bahasa Jerman:</strong></p>
-                <p>Willkommen bei Fun Travel! Wir bieten die besten Mietwagen und Motorräder für Ihr Abenteuer. Keine versteckten Kosten, ehrlicher Service.</p>
+                <p><strong>Willkommen bei Fun Travel!</strong></p>
+                <p>Wir bieten Ihnen erstklassige Mietwagen und Motorräder für Ihr persönliches Abenteuer. Bei uns gibt es keine versteckten Gebühren, sondern nur ehrlicher Service unter Freunden.</p>
             </div>
             <div class="meaning-col">
-                <p><strong>Artinya:</strong></p>
-                <p>Selamat datang di Fun Travel! Kami menyediakan sewa mobil dan motor terbaik untuk petualangan Anda tanpa biaya tersembunyi.</p>
+                <p><strong>Insel-Abenteuer & Flugrechte:</strong></p>
+                <p>Egal ob Sie ein Motorrad für Flores suchen oder Ihre Flugrechte mit <strong>Compensair</strong> durchsetzen wollen – wir sind Ihr Partner in Indonesien.</p>
             </div>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 Fun Travel - Pages.dev - Single Fighter Project 🐢
+        &copy; 2026 Fun Travel & Compensair Partner - Single Fighter Project 🐢
     </footer>
 
 </body>

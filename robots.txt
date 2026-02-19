@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Link ke peta situs kamu
+Sitemap: https://domain-kamu.com/sitemap.xml

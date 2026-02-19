@@ -116,6 +116,40 @@
             .speech-bubble::after { display: none; }
             .clown-section { margin-bottom: 30px; }
         }
+
+
+/* Tambahkan ini di bagian <style> */
+.extra-content-box {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.1); /* Transparan gelap biar elegan */
+    backdrop-filter: blur(10px); /* Efek kaca kekinian */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.meaning-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.meaning-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+h2.gold-title {
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+                                
     </style>
 </head>
 <body>
@@ -148,7 +182,30 @@
                 <a href="#" class="cta-button">Cek Harga Sekarang!</a>
             </div>
         </div>
+
+        
     </div>
+
+<div class="extra-content-box">
+    <h2 class="gold-title">Was bedeutet das? (Apa Artinya?)</h2>
+    <div class="meaning-section">
+        <div class="meaning-col">
+            <p><strong>Bahasa Jerman:</strong></p>
+            <p>
+                Willkommen bei Fun Travel! Wir bieten die besten Mietwagen und Motorräder für Ihr Abenteuer. 
+                Keine versteckten Kosten, nur ehrlicher Service wie ein alter Freund.
+            </p>
+        </div>
+        <div class="meaning-col">
+            <p><strong>Artinya:</strong></p>
+            <p>
+                Selamat datang di Fun Travel! Kami menyediakan sewa mobil dan motor terbaik untuk petualangan Anda. 
+                Tanpa biaya tersembunyi, hanya layanan jujur seperti teman lama.
+            </p>
+        </div>
+    </div>
+</div>
+    
 
 </body>
 </html>
